@@ -24,16 +24,16 @@ $(document).ready(function () {
     },
     breakpoints: {
       0: {
-        slidesPerView: 2,
-      },
-      768: {
         slidesPerView: 3,
       },
-      991: {
+      768: {
         slidesPerView: 4,
       },
-      1400: {
+      991: {
         slidesPerView: 5,
+      },
+      1400: {
+        slidesPerView: 7,
       },
     },
   });
