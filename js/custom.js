@@ -37,6 +37,45 @@ $(document).ready(function () {
       },
     },
   });
+  //projectsSlider
+  var projectsSlider = new Swiper(".projectsSliderContainer", {
+    spaceBetween: 0,
+    // loop: true,
+    effect: "fade",
+    speed: 500,
+    // autoplay: {
+    //   delay: 8000,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: ".projectsSliderPagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".projectsSliderNext",
+      prevEl: ".projectsSliderPrev",
+    },
+  });
+
+  $(" .projects .project .description ").each(function () {
+    var text = $(this).text();
+    if (text.length > 140) {
+      var truncatedText =
+        $.trim(text).substring(0, 140).split(" ").slice(0, -1).join(" ") +
+        "...";
+      $(this).text(truncatedText);
+    }
+  });
+  $(
+    " .projects .project .title  , .projectDetails .Moreprojects .project .description"
+  ).each(function () {
+    var text = $(this).text();
+    if (text.length > 45) {
+      var truncatedText =
+        $.trim(text).substring(0, 45).split(" ").slice(0, -1).join(" ") + "...";
+      $(this).text(truncatedText);
+    }
+  });
 });
 // ////////////////////////////////////////
 // ////////////////////////////////////////

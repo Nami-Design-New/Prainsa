@@ -849,7 +849,6 @@ footer .border-top {
 
 .Products {
   padding: 140px 0 70px;
-  transition: var(--transition);
 }
 .Products .inner {
   display: flex;
@@ -979,7 +978,380 @@ footer .border-top {
     gap: 4px;
   }
 }
+.Products .inner .tab-content .Various {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-top: 20px;
+}
+.Products .inner .tab-content .Various a {
+  flex: 1 100px;
+  display: flex;
+  height: 100px;
+  border-radius: 2px;
+  max-width: 150px;
+}
+.Products .inner .tab-content .Various a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2px;
+}
+.Products .inner .tab-content .table {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.Products .inner .tab-content .table thead {
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+}
+.Products .inner .tab-content .table > :not(caption) > * > * {
+  padding: 12px;
+}
 
 .fw-bold {
   font-family: "RobotoBlack", sans-serif;
+}
+
+.projectsSlider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 600px;
+}
+.projectsSlider .projectsSliderContainer {
+  width: 100%;
+  height: 100%;
+}
+.projectsSlider .projectsSliderContainer .swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: end;
+  width: 100%;
+  background-color: var(--darkColor);
+}
+@media (max-width: 1200px) {
+  .projectsSlider .projectsSliderContainer .swiper-slide {
+    padding-bottom: 80px;
+  }
+}
+.projectsSlider .projectsSliderContainer .swiper-slide video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 50vh;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transform: scale(1.35);
+}
+.projectsSlider .projectsSliderContainer .swiper-slide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.projectsSlider .projectsSliderContainer .swiper-slide::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(31, 31, 31, 0), rgba(31, 31, 31, 0.5568627451) 75%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.projectsSlider .projectsSliderContainer .swiper-slide .info {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 700px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 40px;
+  padding-bottom: 60px;
+}
+@media (max-width: 1200px) {
+  .projectsSlider .projectsSliderContainer .swiper-slide .info {
+    padding: 12px;
+  }
+}
+.projectsSlider .projectsSliderContainer .swiper-slide .info .sliderTitle {
+  color: var(--whiteColor);
+  font-weight: bold;
+  font-size: 45px !important;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .projectsSlider .projectsSliderContainer .swiper-slide .info .sliderTitle {
+    font-size: 32px !important;
+  }
+}
+.projectsSlider .projectsSliderContainer .swiper-slide .info .hint {
+  color: var(--whiteColor);
+}
+@media (max-width: 768px) {
+  .projectsSlider .projectsSliderContainer .swiper-slide .info .hint {
+    font-size: 12px !important;
+  }
+}
+.projectsSlider .projectsSliderContainer .swiper-slide .info .link {
+  margin-top: 10px;
+  text-transform: uppercase;
+  display: inline-flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 8px;
+  align-items: baseline;
+  color: var(--lightGrayColor);
+}
+.projectsSlider .projectsSliderContainer .swiper-slide .info .link:hover {
+  color: var(--whiteColor);
+}
+.projectsSlider .swiperControl {
+  padding: 0 20px 10px;
+}
+.projectsSlider .swiper-slide-active .sliderTitle {
+  animation: fadeInUp 1s 0s both;
+}
+.projectsSlider .swiper-slide-active .hint {
+  animation: fadeInUp 1s 0.75s both;
+}
+.projectsSlider .swiper-slide-active a {
+  animation: fadeInUp 1s 1.5s both;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+.projects {
+  padding: 140px 0 70px;
+}
+.projects .project {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition);
+  margin-bottom: 20px;
+}
+.projects .project img {
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.projects .project .data {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.projects .project .title {
+  color: var(--darkColor);
+  transition: var(--transition);
+  font-weight: bold;
+}
+.projects .project .description {
+  color: var(--grayColor);
+}
+.projects .project:hover {
+  transform: translateY(-5px);
+}
+.projects .project:hover .title {
+  color: var(--mainColor);
+}
+
+.projectDetails {
+  padding: 140px 0 70px;
+}
+.projectDetails .project {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition);
+  padding-bottom: 48px;
+}
+.projectDetails .project img {
+  aspect-ratio: 2/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.projectDetails .project .title {
+  color: var(--darkColor);
+  transition: var(--transition);
+  font-weight: bold;
+}
+.projectDetails .project .description {
+  color: #777;
+}
+.projectDetails .Moreprojects {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: 100%;
+  gap: 32px;
+}
+.projectDetails .Moreprojects .headTitle {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 30px;
+  position: relative;
+}
+.projectDetails .Moreprojects .headTitle::after {
+  content: "";
+  width: 30%;
+  background-color: var(--mainColor);
+  height: 2px;
+  display: flex;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .projectDetails .Moreprojects .headTitle {
+    font-size: 22px;
+  }
+}
+.projectDetails .Moreprojects .project {
+  display: flex;
+  gap: 12px;
+  height: -moz-fit-content;
+  height: fit-content;
+  flex-direction: row;
+  padding-bottom: 0px;
+  align-items: center;
+  padding: 0;
+}
+.projectDetails .Moreprojects .project .data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.projectDetails .Moreprojects .project img {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contactUs {
+  padding: 160px 0 0;
+}
+.contactUs .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .contactUs .title {
+    font-size: 40px;
+  }
+}
+.contactUs .info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.contactUs .info .link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.contactUs .info .link path,
+.contactUs .info .link svg {
+  fill: var(--darkColor);
+}
+.contactUs .info .link:last-child {
+  margin-bottom: 0;
+}
+.contactUs .info .link .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid var(--darkColor);
+}
+.contactUs .info .link .icon svg {
+  width: 20px;
+  height: 20px;
+}
+.contactUs .info .link p {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  color: var(--darkColor);
+  transition: var(--transition);
+}
+.contactUs .info .link p span {
+  color: var(--grayColor);
+}
+.contactUs .info .link:hover p {
+  color: var(--mainColor);
+}
+.contactUs form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: end;
+}
+.contactUs form .form-control {
+  border: none;
+  background: #eee;
+  border-radius: 0;
+  color: var(--darkColor);
+  min-height: 64px;
+  padding: 16px;
+}
+.contactUs form .btn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #000;
+  color: var(--whiteColor);
+  border-radius: 0;
+  transition: var(--transition);
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.contactUs form .btn:hover {
+  background: var(--mainColor);
+  gap: 16px;
+}
+.contactUs .map {
+  width: 100%;
+  height: 400px;
+  padding-top: 40px;
+}
+.contactUs .map iframe {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
