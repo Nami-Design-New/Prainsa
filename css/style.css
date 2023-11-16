@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --mainColor: #ed1b24;
   --mainColor20: #ed1b2433;
@@ -803,7 +804,6 @@ footer .part img {
 }
 footer .link {
   display: flex;
-  align-items: center;
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -815,8 +815,8 @@ footer .link:last-child {
   margin-bottom: 0;
 }
 footer .link .icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -827,6 +827,7 @@ footer .link .icon svg {
   width: 20px;
   height: 20px;
 }
+footer .link a,
 footer .link p {
   display: flex;
   flex-direction: column;
@@ -834,6 +835,7 @@ footer .link p {
   color: var(--whiteColor);
   transition: var(--transition);
 }
+footer .link a span,
 footer .link p span {
   color: var(--lightGrayColor);
 }
@@ -848,7 +850,7 @@ footer .border-top {
 }
 
 .Products {
-  padding: 140px 0 70px;
+  padding: 50px 0;
 }
 .Products .inner {
   display: flex;
@@ -948,33 +950,28 @@ footer .border-top {
   gap: 8px;
   padding-top: 20px;
 }
-.Products .inner .tab-content .gallery a {
+.Products .inner .tab-content .gallery img {
   flex: 1 250px;
-  display: flex;
   height: 300px;
-  border-radius: 4px;
-}
-.Products .inner .tab-content .gallery a img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 4px;
 }
-.Products .inner .tab-content .gallery a:nth-child(4n) {
+.Products .inner .tab-content .gallery:nth-child(4n) {
   min-width: 40vw;
 }
 @media (max-width: 768px) {
-  .Products .inner .tab-content .gallery a {
+  .Products .inner .tab-content .gallery {
     height: 200px;
     min-width: 30vw;
   }
-  .Products .inner .tab-content .gallery a:nth-child(4n) {
+  .Products .inner .tab-content .gallery:nth-child(4n) {
     min-width: 60vw;
   }
 }
 @media (max-width: 768px) {
-  .Products .inner .tab-content .gallery {
+  .Products .inner .tab-content {
     gap: 4px;
   }
 }
@@ -1146,7 +1143,7 @@ footer .border-top {
 }
 
 .projects {
-  padding: 140px 0 70px;
+  padding: 50px 0;
 }
 .projects .project {
   height: 100%;
@@ -1184,7 +1181,7 @@ footer .border-top {
 }
 
 .projectDetails {
-  padding: 140px 0 70px;
+  padding: 50px 0;
 }
 .projectDetails .project {
   height: 100%;
@@ -1258,7 +1255,7 @@ footer .border-top {
 }
 
 .contactUs {
-  padding: 160px 0 0;
+  padding: 50px 0 0;
 }
 .contactUs .title {
   font-weight: bold;
@@ -1279,7 +1276,6 @@ footer .border-top {
 }
 .contactUs .info .link {
   display: flex;
-  align-items: center;
   gap: 12px;
   margin-bottom: 16px;
 }
@@ -1291,8 +1287,8 @@ footer .border-top {
   margin-bottom: 0;
 }
 .contactUs .info .link .icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1354,4 +1350,55 @@ footer .border-top {
 .contactUs .map iframe {
   width: 100%;
   height: 100%;
+}
+
+.banner {
+  background-image: url(../img/concrete-structure-blue-sky.jpg) !important;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  padding: 250px 0 50px;
+  position: relative;
+  display: flex;
+  isolation: isolate;
+}
+@media (max-width: 768px) {
+  .banner {
+    padding: 200px 0 30px;
+  }
+}
+.banner::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.2196078431), #ffffff);
+  z-index: -1;
+}
+.banner .links a {
+  padding: 4px;
+  position: relative;
+  color: var(--darkColor);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: capitalize;
+}
+.banner .links a:last-child::after {
+  display: none;
+}
+.banner .links a::after {
+  content: " ↣ ";
+}
+.banner .links a.active {
+  cursor: default;
+  color: var(--grayColor);
+}
+.banner h2 {
+  font-weight: bold;
+  color: var(--darkColor);
+  text-transform: capitalize;
+  font-family: "RobotoBlack", sans-serif;
 }/*# sourceMappingURL=style.css.map */

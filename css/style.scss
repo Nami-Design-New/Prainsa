@@ -760,7 +760,7 @@ footer {
   }
   .link {
     display: flex;
-    align-items: center;
+    // align-items: center;
     gap: 12px;
     path,
     svg {
@@ -771,8 +771,8 @@ footer {
       margin-bottom: 0;
     }
     .icon {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -783,6 +783,7 @@ footer {
         height: 20px;
       }
     }
+    a,
     p {
       display: flex;
       flex-direction: column;
@@ -807,7 +808,7 @@ footer {
   }
 }
 .Products {
-  padding: 140px 0 70px;
+  padding: 50px 0 ;
   .inner {
     display: flex;
     gap: 24px;
@@ -894,32 +895,29 @@ footer {
         flex-wrap: wrap;
         gap: 8px;
         padding-top: 20px;
-        a {
+
+        img {
           flex: 1 250px;
-          display: flex;
           height: 300px;
+          width: 100%;
+          object-fit: cover;
           border-radius: 4px;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 4px;
-          }
-          &:nth-child(4n) {
-            min-width: 40vw;
-          }
-          @media (max-width: 768px) {
-            height: 200px;
-            min-width: 30vw;
-            &:nth-child(4n) {
-              min-width: 60vw;
-            }
-          }
+        }
+        &:nth-child(4n) {
+          min-width: 40vw;
         }
         @media (max-width: 768px) {
-          gap: 4px;
+          height: 200px;
+          min-width: 30vw;
+          &:nth-child(4n) {
+            min-width: 60vw;
+          }
         }
       }
+      @media (max-width: 768px) {
+        gap: 4px;
+      }
+
       .Various {
         display: flex;
         flex-wrap: wrap;
@@ -1077,7 +1075,7 @@ footer {
   }
 }
 .projects {
-  padding: 140px 0 70px;
+  padding: 50px 0 ;
   .project {
     height: 100%;
     display: flex;
@@ -1117,7 +1115,7 @@ footer {
 }
 
 .projectDetails {
-  padding: 140px 0 70px;
+  padding: 50px 0 ;
   .project {
     height: 100%;
     display: flex;
@@ -1189,7 +1187,7 @@ footer {
 }
 
 .contactUs {
-  padding: 160px 0 0;
+  padding: 50px 0 0 ;
   .title {
     font-weight: bold;
     text-transform: uppercase;
@@ -1206,7 +1204,7 @@ footer {
     margin-bottom: 24px;
     .link {
       display: flex;
-      align-items: center;
+      // align-items: center;
       gap: 12px;
       path,
       svg {
@@ -1217,8 +1215,8 @@ footer {
         margin-bottom: 0;
       }
       .icon {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1276,13 +1274,68 @@ footer {
       }
     }
   }
-  .map{
+  .map {
     width: 100%;
     height: 400px;
     padding-top: 40px;
-    iframe{
+    iframe {
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+.banner {
+  background-image: url(../img/concrete-structure-blue-sky.jpg) !important;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top ;
+  padding: 250px 0 50px;
+  position: relative;
+  display: flex;
+  isolation: isolate;
+  @media (max-width: 768px) {
+    padding: 200px 0 30px;
+  }
+  &::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(#ffffff38 , #ffffff);
+    z-index: -1;
+  }
+  .links {
+    a {
+      padding: 4px;
+      position: relative;
+      color: var(--darkColor);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: capitalize;
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      &::after {
+        content: " ↣ ";
+      }
+      &.active {
+        cursor: default;
+        color: var(--grayColor);
+      }
+    }
+    
+  }
+  h2 {
+    font-weight: bold;
+    color: var(--darkColor);
+    text-transform: capitalize;
+    font-family: "RobotoBlack", sans-serif;
+
   }
 }
