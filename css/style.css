@@ -952,7 +952,6 @@ footer .border-top {
 }
 @media (max-width: 768px) {
   .Products .inner .tab-content .gallery {
-    height: 200px;
     min-width: 30vw;
   }
   .Products .inner .tab-content .gallery:nth-child(4n) {
