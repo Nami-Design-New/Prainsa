@@ -331,21 +331,21 @@ header {
     height: 100dvh;
     overflow: hidden;
     width: 100%;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      background-color: #ffffff2f;
-    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 2;
+    //   background-color: #ffffff2f;
+    // }
     video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.4);
+      // transform: scale(1.4);
     }
   }
   .inner {
